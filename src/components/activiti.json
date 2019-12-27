@@ -1,0 +1,112 @@
+{
+  "name": "Activiti",
+  "uri": "http://some-company/schema/bpmn/activiti",
+  "prefix": "activiti",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "types": [
+    {
+      "name": "FormSupported",
+      "isAbstract": true,
+      "extends": [
+        "bpmn:StartEvent",
+        "bpmn:UserTask"
+      ],
+      "properties": [
+        {
+          "name": "formKey",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "initiator",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "FormProperty",
+      "superClass": [ "Element" ],
+      "meta": {
+        "allowedIn": [
+          "bpmn:StartEvent",
+          "bpmn:UserTask"
+        ]
+      },
+      "properties": [
+        {
+          "name": "id",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "default",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    },
+    {
+      "name": "DateSupported",
+      "isAbstract": true,
+      "extends": [
+        "bpmn:FormalExpression"
+      ],
+      "properties": [
+        {
+          "name": "endDate",
+          "isAttr": true,
+          "type": "Date"
+        }
+      ]
+    },
+    {
+      "name": "UserSupported",
+      "isAbstract": true,
+      "extends": [
+        "bpmn:UserTask"
+      ],
+      "properties": [
+        {
+          "name": "candidateGroups",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "candidateUser",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "assignee",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "exclusive",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
+          "name": "priority",
+          "isAttr": true,
+          "type": "Integer"
+        }
+      ]
+    }
+  ],
+  "emumerations": [],
+  "associations": []
+}
